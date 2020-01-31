@@ -9,9 +9,9 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class represented the Rustler's Ribs entree.
+    /// A class representing the Rustler's Ribs entree.
     /// </summary>
-    class RustlersRibs
+    public class RustlersRibs
     {
         /// <summary>
         /// The price of the ribs

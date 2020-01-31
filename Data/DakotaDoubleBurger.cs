@@ -1,0 +1,85 @@
+﻿/*
+ * Alex Stueve
+ * DakotaDoubleBurger.cs
+ */
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CowboyCafe.Data
+{
+    // A class defining the Dakota Double Burger entree
+    public class DakotaDoubleBurger
+    {
+
+        /// <summary>
+        /// The price of the burger
+        /// </summary>
+        public double Price
+        {
+            get
+            {
+                return 5.20;
+            }
+        }
+
+        /// <summary>
+        /// The calories of the burger
+        /// </summary>
+        public uint Calories
+        {
+            get
+            {
+                return 464;
+            }
+        }
+
+        private bool tomato = true;
+        /// <summary>
+        /// If the burger is served with tomatoes
+        /// </summary>
+        public bool Tomato
+        {
+            get { return tomato; }
+            set { tomato = value; }
+        }
+
+        private bool lettuce = true;
+        /// <summary>
+        /// If the burger is served with lettuce
+        /// </summary>
+        public bool Lettuce
+        {
+            get { return lettuce; }
+            set { lettuce = value; }
+        }
+
+        private bool mayo = true;
+        /// <summary>
+        /// If the burger has mayo on it
+        /// </summary>
+        public bool Mayo
+        {
+            get { return mayo; }
+            set { mayo = value; }
+        }
+
+        /// <summary>
+        /// Special instructions for the preparation of the burger
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+
+                if (!tomato) instructions.Add("hold tomato");
+                if (!lettuce) instructions.Add("hold lettuce");
+                if (!mayo) instructions.Add("hold mayo");
+
+                return instructions;
+            }
+        }
+
+    }
+}
