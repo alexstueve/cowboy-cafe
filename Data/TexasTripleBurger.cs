@@ -1,17 +1,13 @@
-﻿/*
- * Alex Stueve
- * DakotaDoubleBurger.cs
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
-    // A class defining the Dakota Double Burger entree
-    public class DakotaDoubleBurger
+    /// <summary>
+    /// A class representing the Texas Triple Burger entree
+    /// </summary>
+    public class TexasTripleBurger
     {
-
         /// <summary>
         /// The price of the burger
         /// </summary>
@@ -19,7 +15,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 5.20;
+                return 6.45;
             }
         }
 
@@ -30,7 +26,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 464;
+                return 698;
             }
         }
 
@@ -136,6 +132,26 @@ namespace CowboyCafe.Data
             set { mayo = value; }
         }
 
+        private bool bacon = true;
+        /// <summary>
+        /// If the burger is served with bacon
+        /// </summary>
+        public bool Bacon
+        {
+            get { return bacon; }
+            set { mayo = value; }
+        }
+
+        private bool egg = true;
+        /// <summary>
+        /// If the burger is served with an egg
+        /// </summary>
+        public bool Egg
+        {
+            get { return egg; }
+            set { egg = value; }
+        }
+
         /// <summary>
         /// Special instructions for the preparation of the burger
         /// </summary>
@@ -153,10 +169,11 @@ namespace CowboyCafe.Data
                 if (!tomato) instructions.Add("hold tomato");
                 if (!lettuce) instructions.Add("hold lettuce");
                 if (!mayo) instructions.Add("hold mayo");
+                if (!bacon) instructions.Add("hold bacon");
+                if (!egg) instructions.Add("hold egg");
 
                 return instructions;
             }
         }
-
     }
 }
