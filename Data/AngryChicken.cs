@@ -65,7 +65,7 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
 
                 if (!bread) instructions.Add("hold bread");
-                if (!pickle) instructions.Add("hold pickles");
+                if (!pickle) instructions.Add("hold pickle");
 
                 return instructions;
             }

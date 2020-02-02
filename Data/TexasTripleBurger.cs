@@ -30,28 +30,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        /// <summary>
-        /// The price of the burger
-        /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 4.50;
-            }
-        }
-
-        /// <summary>
-        /// The calories of the burger
-        /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 288;
-            }
-        }
-
         private bool bun = true;
         /// <summary>
         /// If the burger is served with a bun
@@ -139,7 +117,7 @@ namespace CowboyCafe.Data
         public bool Bacon
         {
             get { return bacon; }
-            set { mayo = value; }
+            set { bacon = value; }
         }
 
         private bool egg = true;

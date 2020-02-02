@@ -8,8 +8,8 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    // A class representing the Trailburger entree
-    public class Trailburger
+    // A class representing the TrailBurger entree
+    public class TrailBurger
     {
 
         /// <summary>
