@@ -9,7 +9,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     // A class representing the TrailBurger entree
-    public class TrailBurger
+    public class TrailBurger : Entree
     {
 
         /// <summary>

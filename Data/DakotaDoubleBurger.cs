@@ -9,7 +9,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     // A class defining the Dakota Double Burger entree
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger : Entree
     {
 
         /// <summary>

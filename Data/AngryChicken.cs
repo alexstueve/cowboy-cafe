@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// This class defines the Angry Chicken entree
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
         private bool bread = true;
         /// <summary>
