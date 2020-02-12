@@ -5,26 +5,26 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class defining the Jerked Soda drink
+    /// A class defining the Cowboy Coffee Drink
     /// </summary>
-    public class JerkedSoda : Drink
+    public class CowboyCoffee : Drink
     {
         /// <summary>
-        /// Gets the price of the Jerked Soda
+        /// Gets the price of the Cowboy Coffee
         /// </summary>
         public override double Price
         {
-            
+
             get
             {
-                switch(Size)
+                switch (Size)
                 {
                     case Size.Small:
-                        return 1.59;
+                        return 0.60;
                     case Size.Medium:
-                        return 2.10;
+                        return 1.10;
                     case Size.Large:
-                        return 2.59;
+                        return 1.60;
                     default:
                         throw new NotImplementedException();
                 }
@@ -33,7 +33,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Gets the calories of the Jerked Soda
+        /// Gets the calories of the Cowboy Coffee
         /// </summary>
         public override uint Calories
         {
@@ -43,11 +43,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 110;
+                        return 3;
                     case Size.Medium:
-                        return 146;
+                        return 5;
                     case Size.Large:
-                        return 198;
+                        return 7;
                     default:
                         throw new NotImplementedException();
                 }
@@ -55,19 +55,20 @@ namespace CowboyCafe.Data
 
         }
 
+        private bool roomforcream = false;
         /// <summary>
-        /// Gets and sets the flavor of the Jerked Soda
+        /// Whether or not the Cowboy Coffee will be served with room for cream
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public bool RoomForCream { get => roomforcream; set => roomforcream = value; }
 
-        private bool ice = true;
+        private bool ice = false;
         /// <summary>
-        /// Whether or not the Jerked Soda is served with ice
+        /// Whether or not the Cowboy Coffee is served with ice
         /// </summary>
         public override bool Ice { get => ice; set => ice = value; }
 
         /// <summary>
-        /// Gets the special instructions of the Jerked Soda
+        /// Gets the special instructions of the Cowboy Coffee
         /// </summary>
         public override List<string> SpecialInstructions
         {
@@ -75,11 +76,11 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!Ice) instructions.Add("Hold ice");
+                if (Ice) instructions.Add("Add ice");
+                if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;
             }
         }
-
     }
 }
