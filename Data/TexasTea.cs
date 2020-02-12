@@ -77,7 +77,7 @@ namespace CowboyCafe.Data
         public override bool Ice { get => ice; set => ice = value; }
 
         /// <summary>
-        /// Gets the special instructions of the Jerked Soda
+        /// Gets the special instructions of the Texas Tea
         /// </summary>
         public override List<string> SpecialInstructions
         {
