@@ -61,6 +61,12 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool RoomForCream { get => roomforcream; set => roomforcream = value; }
 
+        private bool decaf = false;
+        /// <summary>
+        /// Whether or not the Cowboy Coffee will be decaf or not
+        /// </summary>
+        public bool Decaf { get => decaf; set => decaf = value; }
+
         private bool ice = false;
         /// <summary>
         /// Whether or not the Cowboy Coffee is served with ice
@@ -76,7 +82,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (Ice) instructions.Add("Add ice");
+                if (Ice) instructions.Add("Add Ice");
                 if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;
