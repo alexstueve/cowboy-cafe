@@ -6,4 +6,8 @@
     <RootNamespace>CowboyCafe.Data</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Documentation\" />
+  </ItemGroup>
+
 </Project>
