@@ -22,12 +22,11 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
         }
 
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new CowpokeChili());
+            OrderListView.Items.Add(sender.ToString());
         }
     }
 }

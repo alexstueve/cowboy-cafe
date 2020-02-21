@@ -29,7 +29,7 @@
         
         <StackPanel Grid.Column="0">
             <TextBlock>Entree</TextBlock>
-            <Button Name="AddAngryChickenButton">Angry Chicken</Button>
+            <Button Name="AddAngryChickenButton" Click="AddAngryChickenButton_Click">Angry Chicken</Button>
             <Button Name="AddCowpokeChiliButton">Cowpoke Chili</Button>
             <Button Name="AddDakotaDoubleBurgerButton">DakotaDoubleBurger</Button>
             <Button Name="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
@@ -39,7 +39,10 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock>Side</TextBlock>
-            
+            <Button Name="AddBakedBeansButton">Baked Beans</Button>
+            <Button Name="AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
+            <Button Name="AddCornDodgersButton">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampoButton">Pan de Campo</Button>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock>Drink</TextBlock>

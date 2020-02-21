@@ -88,5 +88,20 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this drink
+        /// </summary>
+        /// <returns>The string decribing the Cowboy Coffee</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"{Size} ");
+            if (Decaf) sb.Append("Decaf ");
+            sb.Append("Cowboy Coffee");
+
+            return sb.ToString();
+        }
     }
 }

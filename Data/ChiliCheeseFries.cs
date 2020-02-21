@@ -55,5 +55,19 @@ namespace CowboyCafe.Data
         /// Gets and sets the size of the Chili Cheese Fries
         /// </summary>
         public override Size Size { get; set; }
+
+        /// <summary>
+        /// Returns the string representation of this side
+        /// </summary>
+        /// <returns>The string decribing the Chili Cheese Fries</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"{Size} ");
+            sb.Append("Chili Cheese Fries");
+
+            return sb.ToString();
+        }
     }
 }
