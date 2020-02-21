@@ -39,13 +39,14 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock>Side</TextBlock>
-            <Button Background="CadetBlue" Name="AddCowboyCoffeeButton">Cowboy Coffee</Button>
-            <Button Name="AddJerkedSodaButton">Jerked Soda</Button>
-            <Button Name="AddTexasTeaButton">Texas Tea</Button>
-            <Button Name="AddWaterButton">Water</Button>
+            
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock>Drink</TextBlock>
+            <Button Name="AddCowboyCoffeeButton">Cowboy Coffee</Button>
+            <Button Name="AddJerkedSodaButton">Jerked Soda</Button>
+            <Button Name="AddTexasTeaButton">Texas Tea</Button>
+            <Button Name="AddWaterButton">Water</Button>
         </StackPanel>
         <StackPanel Grid.Column="3">
             <TextBlock>Order</TextBlock>
