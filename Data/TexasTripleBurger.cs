@@ -152,6 +152,18 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+
+            
         }
+
+        /// <summary>
+        /// Returns the string representation of this entree
+        /// </summary>
+        /// <returns>The string decribing the Texas Triple Burger</returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
+
     }
 }

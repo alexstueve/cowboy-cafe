@@ -91,5 +91,22 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this drink
+        /// </summary>
+        /// <returns>The string decribing the Texas Tea</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"{Size} ");
+            sb.Append("Texas ");
+            if (Sweet) sb.Append("Sweet ");
+            else sb.Append("Plain ");
+            sb.Append("Tea");
+
+            return sb.ToString();
+        }
     }
 }

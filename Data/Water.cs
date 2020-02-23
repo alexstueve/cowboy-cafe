@@ -46,5 +46,19 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of this drink
+        /// </summary>
+        /// <returns>The string decribing the Water</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"{Size} ");
+            sb.Append("Water");
+
+            return sb.ToString();
+        }
     }
 }

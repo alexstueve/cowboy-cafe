@@ -55,5 +55,19 @@ namespace CowboyCafe.Data
         /// Gets and sets the size of the Pan de Campo
         /// </summary>
         public override Size Size { get; set; }
+
+        /// <summary>
+        /// Returns the string representation of this side
+        /// </summary>
+        /// <returns>The string decribing the Pan de Campo</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"{Size} ");
+            sb.Append("Pan de Campo");
+
+            return sb.ToString();
+        }
     }
 }
