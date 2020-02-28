@@ -7,6 +7,8 @@ namespace CowboyCafe.Data
     public class Order
     {
 
+        public static uint LastOrderNumber = 1;
+
         public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
 
         public double Subtotal => 0;
