@@ -35,7 +35,10 @@ namespace PointOfSale
         private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
         {
             AngryChicken ac = new AngryChicken();
-            OrderListView.Items.Add(ac.ToString());
+            if (DataContext is Order data)
+            {
+                data.Add(ac);
+            }
         }
 
         /// <summary>
@@ -46,7 +49,7 @@ namespace PointOfSale
         private void AddCowpokeChiliButton_Click(object sender, RoutedEventArgs e)
         {
             CowpokeChili cc = new CowpokeChili();
-            OrderListView.Items.Add(cc.ToString());
+            //OrderListView.Items.Add(cc.ToString());
         }
 
         /// <summary>
@@ -57,7 +60,7 @@ namespace PointOfSale
         private void AddDakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             DakotaDoubleBurger ddb = new DakotaDoubleBurger();
-            OrderListView.Items.Add(ddb.ToString());
+            //OrderListView.Items.Add(ddb.ToString());
         }
 
         /// <summary>
@@ -68,7 +71,7 @@ namespace PointOfSale
         private void AddPecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
         {
             PecosPulledPork ppp = new PecosPulledPork();
-            OrderListView.Items.Add(ppp.ToString());
+            //OrderListView.Items.Add(ppp.ToString());
         }
 
         /// <summary>
@@ -79,7 +82,7 @@ namespace PointOfSale
         private void AddRustlersRibsButton_Click(object sender, RoutedEventArgs e)
         {
             RustlersRibs rr = new RustlersRibs();
-            OrderListView.Items.Add(rr.ToString());
+            //OrderListView.Items.Add(rr.ToString());
         }
 
         /// <summary>
@@ -90,7 +93,7 @@ namespace PointOfSale
         private void AddTexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
         {
             TexasTripleBurger ttb = new TexasTripleBurger();
-            OrderListView.Items.Add(ttb.ToString());
+            //OrderListView.Items.Add(ttb.ToString());
         }
 
         /// <summary>
@@ -101,7 +104,7 @@ namespace PointOfSale
         private void AddTrailburgerButton_Click(object sender, RoutedEventArgs e)
         {
             TrailBurger tb = new TrailBurger();
-            OrderListView.Items.Add(tb.ToString());
+            //OrderListView.Items.Add(tb.ToString());
         }
 
         /// <summary>
@@ -112,7 +115,7 @@ namespace PointOfSale
         private void AddBakedBeansButton_Click(object sender, RoutedEventArgs e)
         {
             BakedBeans bb = new BakedBeans();
-            OrderListView.Items.Add(bb.ToString());
+            //OrderListView.Items.Add(bb.ToString());
         }
 
         /// <summary>
@@ -123,7 +126,7 @@ namespace PointOfSale
         private void AddChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
         {
             ChiliCheeseFries ccf = new ChiliCheeseFries();
-            OrderListView.Items.Add(ccf.ToString());
+            //OrderListView.Items.Add(ccf.ToString());
         }
 
         /// <summary>
@@ -134,7 +137,7 @@ namespace PointOfSale
         private void AddCornDodgersButton_Click(object sender, RoutedEventArgs e)
         {
             CornDodgers cd = new CornDodgers();
-            OrderListView.Items.Add(cd.ToString());
+            //OrderListView.Items.Add(cd.ToString());
         }
 
         /// <summary>
@@ -145,7 +148,7 @@ namespace PointOfSale
         private void AddPanDeCampoButton_Click(object sender, RoutedEventArgs e)
         {
             PanDeCampo pdc = new PanDeCampo();
-            OrderListView.Items.Add(pdc.ToString());
+            //OrderListView.Items.Add(pdc.ToString());
         }
 
         /// <summary>
@@ -156,7 +159,7 @@ namespace PointOfSale
         private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
             CowboyCoffee cc = new CowboyCoffee();
-            OrderListView.Items.Add(cc.ToString());
+            //OrderListView.Items.Add(cc.ToString());
         }
 
         /// <summary>
@@ -167,7 +170,7 @@ namespace PointOfSale
         private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
         {
             JerkedSoda js = new JerkedSoda();
-            OrderListView.Items.Add(js.ToString());
+            //OrderListView.Items.Add(js.ToString());
         }
 
         /// <summary>
@@ -178,7 +181,7 @@ namespace PointOfSale
         private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
         {
             TexasTea tt = new TexasTea();
-            OrderListView.Items.Add(tt.ToString());
+            //OrderListView.Items.Add(tt.ToString());
         }
 
         /// <summary>
@@ -189,7 +192,7 @@ namespace PointOfSale
         private void AddWaterButton_Click(object sender, RoutedEventArgs e)
         {
             Water w = new Water();
-            OrderListView.Items.Add(w.ToString());
+            //OrderListView.Items.Add(w.ToString());
         }
     }
 }

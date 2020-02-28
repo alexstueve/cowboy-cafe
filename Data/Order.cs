@@ -1,21 +1,86 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Order
+    public class Order : INotifyPropertyChanged
     {
 
-        public static uint LastOrderNumber = 1;
+        /// <summary>
+        /// The order number, will increment with each initialization
+        /// </summary>
+        private static uint LastOrderNumber = 0;
 
-        public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
+        /// <summary>
+        /// constructor for the order, increments the order number
+        /// </summary>
+        public Order()
+        {
+            LastOrderNumber++;
+        }
 
-        public double Subtotal => 0;
+        
 
-        public void Add(IOrderItem item) { }
+        /// <summary>
+        /// a list of all the items in the order
+        /// </summary>
+        private List<IOrderItem> items = new List<IOrderItem>();
 
-        public void Remove(IOrderItem item) { }
+        /// <summary>
+        /// gets all of the items currently in the order
+        /// </summary>
+        public IEnumerable<IOrderItem> Items { get => items.ToArray(); }
+
+        private double subtotal = 0;
+        /// <summary>
+        /// gets the subtotal of all the items in the order and invokes the event handler
+        /// </summary>
+        public double Subtotal
+        {
+            get
+            {
+                foreach (var item in Items)
+                {
+                    subtotal += item.Price;
+                }
+
+                return subtotal;
+            }
+        }
+
+        /// <summary>
+        /// gets the order number for this order
+        /// </summary>
+        public uint OrderNumber = LastOrderNumber;
+
+        /// <summary>
+        /// event handler to notify when a property in this class has changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// adds an item to the order and invokes the event handler
+        /// </summary>
+        /// <param name="item">the item to be added</param>
+        public void Add(IOrderItem item)
+        {
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        /// <summary>
+        /// removes an item to the order and invokes the event handler
+        /// </summary>
+        /// <param name="item">the order to remove</param>
+        public void Remove(IOrderItem item)
+        {
+            items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
 
     }
 }

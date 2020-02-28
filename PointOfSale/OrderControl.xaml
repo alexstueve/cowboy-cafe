@@ -24,7 +24,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
         <StackPanel Grid.Column="0">
@@ -51,12 +50,6 @@
             <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Click">Texas Tea</Button>
             <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
         </StackPanel>
-        <StackPanel Grid.Column="3">
-            <TextBlock>Order</TextBlock>
-            <ListView Name="OrderListView">
-                
-            </ListView>
-        </StackPanel>
-        
+
     </Grid>
 </UserControl>
