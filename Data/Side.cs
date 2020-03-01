@@ -25,6 +25,6 @@ namespace CowboyCafe.Data
         public abstract uint Calories { get; }
 
 
-        public List<string> SpecialInstructions => throw new NotImplementedException();
+        public List<string> SpecialInstructions => new List<string>();
     }
 }

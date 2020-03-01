@@ -21,10 +21,19 @@
         <TextBlock Grid.Row="2" Grid.Column="0" FontSize="24">Subtotal</TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Subtotal, Mode=OneWay, StringFormat=c}"/>
         <StackPanel Grid.Row="1" Grid.Column="0">
-            <ListBox ItemsSource="{Binding Path=Items}"/>
+            <ListBox ItemsSource="{Binding Path=Items}">
+            </ListBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <ListBox Name="ItemsPricesListBox" ItemsSource="{Binding Path=Items}"></ListBox>
+            <ListBox ItemsSource="{Binding Path=Items}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=Price, StringFormat=c}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </UserControl>
