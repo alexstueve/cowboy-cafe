@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -21,6 +22,40 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+
+            var data = new Order();
+
+            DataContext = data;
+        }
+
+        /// <summary>
+        /// Click event for the Item Selection button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+            // does nothing
+        }
+
+        /// <summary>
+        /// Click event for the Cancel Order button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
+        }
+
+        /// <summary>
+        /// Click event for the Complete Order button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
         }
     }
 }

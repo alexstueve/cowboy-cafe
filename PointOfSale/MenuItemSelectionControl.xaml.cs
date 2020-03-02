@@ -15,12 +15,12 @@ using CowboyCafe.Data;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
     public partial class MenuItemSelecctionControl : UserControl
     {
         /// <summary>
-        /// Starts the order control
+        /// Starts the MenuItemSelectionControl
         /// </summary>
         public MenuItemSelecctionControl()
         {

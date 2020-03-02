@@ -21,7 +21,7 @@
             <TextBlock Text="{Binding Path=OrderNumber}"></TextBlock>
         </TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="0" FontSize="24">Subtotal</TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Subtotal, Mode=OneWay, StringFormat=c}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
         <StackPanel Grid.Row="1" Grid.Column="0">
             <ListBox ItemsSource="{Binding Path=Items}">
             </ListBox>

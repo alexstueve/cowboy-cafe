@@ -41,6 +41,7 @@ namespace CowboyCafe.Data
         {
             get
             {
+                subtotal = 0;
                 foreach (var item in Items)
                 {
                     subtotal += item.Price;
