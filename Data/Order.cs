@@ -53,7 +53,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets the order number for this order
         /// </summary>
-        public uint OrderNumber = LastOrderNumber;
+        public uint OrderNumber { get => LastOrderNumber; }
 
         /// <summary>
         /// event handler to notify when a property in this class has changed

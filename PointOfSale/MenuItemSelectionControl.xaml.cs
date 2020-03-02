@@ -17,12 +17,12 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for OrderControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class MenuItemSelecctionControl : UserControl
     {
         /// <summary>
         /// Starts the order control
         /// </summary>
-        public OrderControl()
+        public MenuItemSelecctionControl()
         {
             InitializeComponent();
         }
