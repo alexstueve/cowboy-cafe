@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -19,12 +20,34 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelecctionControl : UserControl
     {
+
         /// <summary>
         /// Starts the MenuItemSelectionControl
         /// </summary>
         public MenuItemSelecctionControl()
         {
             InitializeComponent();
+            
+        }
+
+        // POTENTIAL WAY TO INCLUDE ALL BUTTONS IN ONE HANDLER, USE TAGS ON THE BUTTONS THEMSELVES
+
+        
+        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            //orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -48,10 +71,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowpokeChiliButton_Click(object sender, RoutedEventArgs e)
         {
-            CowpokeChili cc = new CowpokeChili();
+            var orderControl = this.FindAncestor<OrderControl>();
+            
             if (DataContext is Order data)
             {
+                var cc = new CowpokeChili();
+                var screen = new CustomizeCowpokeChili();
+                screen.DataContext = cc;
                 data.Add(cc);
+                orderControl.SwapScreen(new CustomizeCowpokeChili());
             }
         }
 

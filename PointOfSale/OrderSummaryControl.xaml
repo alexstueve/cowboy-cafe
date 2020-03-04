@@ -24,6 +24,14 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Subtotal, StringFormat=c}"/>
         <StackPanel Grid.Row="1" Grid.Column="0">
             <ListBox ItemsSource="{Binding Path=Items}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding}"/>
+                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
