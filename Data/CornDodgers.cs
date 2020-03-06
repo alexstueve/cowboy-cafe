@@ -52,11 +52,6 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Gets and sets the size of the Corn Dodgers
-        /// </summary>
-        public override Size Size { get; set; }
-
-        /// <summary>
         /// Returns the string representation of this side
         /// </summary>
         /// <returns>The string decribing the Corn Dodgers</returns>

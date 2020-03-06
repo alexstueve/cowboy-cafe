@@ -52,11 +52,6 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Gets and sets the size of the Baked Beans
-        /// </summary>
-        public override Size Size { get; set; }
-
-        /// <summary>
         /// Returns the string representation of this side
         /// </summary>
         /// <returns>The string decribing the Baked Beans</returns>

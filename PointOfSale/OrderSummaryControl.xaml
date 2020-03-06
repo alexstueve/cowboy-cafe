@@ -21,22 +21,25 @@
         </TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="0" FontSize="24">Subtotal</TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Path=Subtotal, StringFormat=c}" HorizontalAlignment="Right"/>
-        <StackPanel Grid.Row="1" Grid.Column="0">
-            <ListBox ItemsSource="{Binding Path=Items}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding}">
-                                <DockPanel HorizontalAlignment="Right">
-                                    <TextBlock Text="{Binding Path=Price, StringFormat=c}" DockPanel.Dock="Right"></TextBlock>
-                                </DockPanel>
-                            </TextBlock>
-                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
-        
+        <ListView ItemsSource="{Binding Path=Items}" Grid.Row="1" Grid.Column="0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0"/>
+                        <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" Grid.Row="0"/>
+                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </UserControl>
