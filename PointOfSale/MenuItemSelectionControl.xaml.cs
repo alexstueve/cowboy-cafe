@@ -18,13 +18,13 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
-    public partial class MenuItemSelecctionControl : UserControl
+    public partial class MenuItemSelectionControl : UserControl
     {
 
         /// <summary>
         /// Starts the MenuItemSelectionControl
         /// </summary>
-        public MenuItemSelecctionControl()
+        public MenuItemSelectionControl()
         {
             InitializeComponent();
             
@@ -77,9 +77,24 @@ namespace PointOfSale
             {
                 var cc = new CowpokeChili();
                 var screen = new CustomizeCowpokeChili();
-                screen.DataContext = cc;
-                data.Add(cc);
-                orderControl.SwapScreen(new CustomizeCowpokeChili());
+                AddItemAndOpenCustomizationScreen(cc, screen);
+            }
+        }
+
+        private void AddItemAndOpenCustomizationScreen(IOrderItem item, UserControl screen)
+        {
+            if (DataContext is Order data)
+            {
+                if (screen != null)
+                {
+                    var orderControl = this.FindAncestor<OrderControl>();
+                    if (orderControl != null)
+                    {
+                        screen.DataContext = item;
+                        orderControl.SwapScreen(screen);
+                    }
+                }
+                data.Add(item);
             }
         }
 

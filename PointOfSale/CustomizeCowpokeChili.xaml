@@ -9,10 +9,10 @@
     <Grid>
         <StackPanel>
             <TextBlock FontSize="30" Text="Customize Cowpoke Chili" Margin="10"/>
-            <CheckBox Name="CheeseCheckBox" Content="Cheese" FontSize="24"/>
-            <CheckBox Name="SourCreamCheckBox" Content="Sour Cream" FontSize="24"/>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Name="CheeseCheckBox" Content="Cheese" FontSize="24"/>
+            <CheckBox IsChecked="{Binding Path=SourCream}" Name="SourCreamCheckBox" Content="Sour Cream" FontSize="24"/>
             <CheckBox IsChecked="{Binding Path=GreenOnions}" Name="GreenOnionsCheckBox" Content="Green Onions" FontSize="24"/>
-            <CheckBox Name="TortillaStripsCheckBox" Content="Tortilla Strips" FontSize="24"/>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Name="TortillaStripsCheckBox" Content="Tortilla Strips" FontSize="24"/>
         </StackPanel>
     </Grid>
 </UserControl>

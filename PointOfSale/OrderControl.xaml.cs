@@ -35,7 +35,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            // does nothing
+            Container.Child = new MenuItemSelectionControl();
         }
 
         /// <summary>
