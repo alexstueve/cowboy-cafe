@@ -30,11 +30,11 @@
             <TextBlock>Entree</TextBlock>
             <Button Name="AddAngryChickenButton" Click="OnItemAddButtonClicked" Tag="AngryChicken">Angry Chicken</Button>
             <Button Name="AddCowpokeChiliButton" Click="OnItemAddButtonClicked" Tag="CowpokeChili">Cowpoke Chili</Button>
-            <Button Name="AddDakotaDoubleBurgerButton" Click="AddDakotaDoubleBurgerButton_Click">DakotaDoubleBurger</Button>
-            <Button Name="AddPecosPulledPorkButton" Click="AddPecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
-            <Button Name="AddRustlersRibsButton" Click="AddRustlersRibsButton_Click">Rustler's Ribs</Button>
-            <Button Name="AddTexasTripleBurgerButton" Click="AddTexasTripleBurgerButton_Click">Texas Triple Burger</Button>
-            <Button Name="AddTrailburgerButton" Click="AddTrailburgerButton_Click">Trailburger</Button>
+            <Button Name="AddDakotaDoubleBurgerButton" Click="OnItemAddButtonClicked" Tag="DakotaDoubleBurger">DakotaDoubleBurger</Button>
+            <Button Name="AddPecosPulledPorkButton" Click="OnItemAddButtonClicked" Tag="PecosPulledPork">Pecos Pulled Pork</Button>
+            <Button Name="AddRustlersRibsButton" Click="OnItemAddButtonClicked" Tag="RustlersRibs">Rustler's Ribs</Button>
+            <Button Name="AddTexasTripleBurgerButton" Click="OnItemAddButtonClicked" Tag="TexasTripleBurger">Texas Triple Burger</Button>
+            <Button Name="AddTrailburgerButton" Click="OnItemAddButtonClicked" Tag="Trailburger">Trailburger</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock>Side</TextBlock>

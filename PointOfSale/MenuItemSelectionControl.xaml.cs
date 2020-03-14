@@ -40,34 +40,46 @@ namespace PointOfSale
                 if (sender is Button button)
                 {
                     UserControl screen;
+                    IOrderItem item;
                     switch (button.Tag)
                     {
                         case "AngryChicken":
-                            var ac = new AngryChicken();
+                            item = new AngryChicken();
                             screen = new CustomizeAngryChicken();
-                            AddItemAndOpenCustomizationScreen(ac, screen);
+                            AddItemAndOpenCustomizationScreen(item, screen);
                             break;
                         case "CowpokeChili":
-                            var cc = new CowpokeChili();
+                            item = new CowpokeChili();
                             screen = new CustomizeCowpokeChili();
-                            AddItemAndOpenCustomizationScreen(cc, screen);
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "DakotaDoubleBurger":
+                            item = new DakotaDoubleBurger();
+                            screen = new CustomizeDakotaDoubleBurger();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "PecosPulledPork":
+                            item = new PecosPulledPork();
+                            screen = new CustomizePecosPulledPork();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "RustlersRibs":
+                            item = new RustlersRibs();
+                            screen = null;
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "TexasTripleBurger":
+                            item = new TexasTripleBurger();
+                            screen = new CustomizeTexasTripleBurger();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "Trailburger":
+                            item = new Trailburger();
+                            screen = new CustomizeTrailburger();
+                            AddItemAndOpenCustomizationScreen(item, screen);
                             break;
                     }
                 }
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Angry Chicken button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddAngryChickenButton_Click(object sender, RoutedEventArgs e)
-        {
-            AngryChicken ac = new AngryChicken();
-            if (DataContext is Order data)
-            {
-                data.Add(ac);
             }
         }
 
@@ -86,48 +98,6 @@ namespace PointOfSale
                     }
                 }
                 
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Dakota Double Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddDakotaDoubleBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            DakotaDoubleBurger ddb = new DakotaDoubleBurger();
-            if (DataContext is Order data)
-            {
-                data.Add(ddb);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Pecos Pulled Pork button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddPecosPulledPorkButton_Click(object sender, RoutedEventArgs e)
-        {
-            PecosPulledPork ppp = new PecosPulledPork();
-            if (DataContext is Order data)
-            {
-                data.Add(ppp);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Rustler's Ribs button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddRustlersRibsButton_Click(object sender, RoutedEventArgs e)
-        {
-            RustlersRibs rr = new RustlersRibs();
-            if (DataContext is Order data)
-            {
-                data.Add(rr);
             }
         }
 
@@ -152,7 +122,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTrailburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            TrailBurger tb = new TrailBurger();
+            Trailburger tb = new Trailburger();
             if (DataContext is Order data)
             {
                 data.Add(tb);

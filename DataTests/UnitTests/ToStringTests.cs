@@ -12,7 +12,7 @@ namespace CowboyCafe.DataTests
         [InlineData(typeof(CowpokeChili), "Cowpoke Chili")]
         [InlineData(typeof(RustlersRibs), "Rustler's Ribs")]
         [InlineData(typeof(PecosPulledPork), "Pecos Pulled Pork")]
-        [InlineData(typeof(TrailBurger), "Trail Burger")]
+        [InlineData(typeof(Trailburger), "Trail Burger")]
         [InlineData(typeof(DakotaDoubleBurger), "Dakota Double Burger")]
         [InlineData(typeof(TexasTripleBurger), "Texas Triple Burger")]
         [InlineData(typeof(AngryChicken), "Angry Chicken")]
