@@ -39,11 +39,18 @@ namespace PointOfSale
             {
                 if (sender is Button button)
                 {
+                    UserControl screen;
                     switch (button.Tag)
                     {
+                        case "AngryChicken":
+                            var ac = new AngryChicken();
+                            screen = new CustomizeAngryChicken();
+                            AddItemAndOpenCustomizationScreen(ac, screen);
+                            break;
                         case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            //orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            var cc = new CowpokeChili();
+                            screen = new CustomizeCowpokeChili();
+                            AddItemAndOpenCustomizationScreen(cc, screen);
                             break;
                     }
                 }
@@ -64,27 +71,11 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Click event for the Cowpoke Chili button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddCowpokeChiliButton_Click(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            
-            if (DataContext is Order data)
-            {
-                var cc = new CowpokeChili();
-                var screen = new CustomizeCowpokeChili();
-                AddItemAndOpenCustomizationScreen(cc, screen);
-            }
-        }
-
         private void AddItemAndOpenCustomizationScreen(IOrderItem item, UserControl screen)
         {
             if (DataContext is Order data)
             {
+                data.Add(item);
                 if (screen != null)
                 {
                     var orderControl = this.FindAncestor<OrderControl>();
@@ -94,7 +85,7 @@ namespace PointOfSale
                         orderControl.SwapScreen(screen);
                     }
                 }
-                data.Add(item);
+                
             }
         }
 
