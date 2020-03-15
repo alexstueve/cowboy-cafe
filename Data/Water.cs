@@ -23,13 +23,21 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Whether or not the Water is served with a lemon
         /// </summary>
-        public bool Lemon { get => lemon; set => lemon = value; }
+        public bool Lemon
+        {
+            get { return lemon; }
+            set { lemon = value; NotifyOfPropertyChanged("Lemon"); }
+        }
 
         private bool ice = true;
         /// <summary>
         /// Whether or not the Water is served with ice
         /// </summary>
-        public override bool Ice { get => ice; set => ice = value; }
+        public override bool Ice
+        {
+            get { return ice; }
+            set { ice = value; NotifyOfPropertyChanged("Ice"); }
+        }
 
         /// <summary>
         /// Gets the special instructions of the Water

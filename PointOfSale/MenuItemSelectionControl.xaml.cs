@@ -98,6 +98,26 @@ namespace PointOfSale
                             screen = new CustomizePanDeCampo();
                             AddItemAndOpenCustomizationScreen(item, screen);
                             break;
+                        case "CowboyCoffee":
+                            item = new CowboyCoffee();
+                            screen = new CustomizeCowboyCoffee();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "JerkedSoda":
+                            item = new JerkedSoda();
+                            screen = new CustomizeJerkedSoda();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "TexasTea":
+                            item = new TexasTea();
+                            screen = new CustomizeTexasTea();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "Water":
+                            item = new Water();
+                            screen = new CustomizeWater();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
                     }
                 }
             }
@@ -121,116 +141,5 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Click event for the Baked Beans button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddBakedBeansButton_Click(object sender, RoutedEventArgs e)
-        {
-            BakedBeans bb = new BakedBeans();
-            if (DataContext is Order data)
-            {
-                data.Add(bb);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Chili Cheese Fries button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddChiliCheeseFriesButton_Click(object sender, RoutedEventArgs e)
-        {
-            ChiliCheeseFries ccf = new ChiliCheeseFries();
-            if (DataContext is Order data)
-            {
-                data.Add(ccf);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Corn Dodgers button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddCornDodgersButton_Click(object sender, RoutedEventArgs e)
-        {
-            CornDodgers cd = new CornDodgers();
-            if (DataContext is Order data)
-            {
-                data.Add(cd);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Pan de Campo button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddPanDeCampoButton_Click(object sender, RoutedEventArgs e)
-        {
-            PanDeCampo pdc = new PanDeCampo();
-            if (DataContext is Order data)
-            {
-                data.Add(pdc);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Cowboy Coffee button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            CowboyCoffee cc = new CowboyCoffee();
-            if (DataContext is Order data)
-            {
-                data.Add(cc);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Jerked Soda button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
-        {
-            JerkedSoda js = new JerkedSoda();
-            if (DataContext is Order data)
-            {
-                data.Add(js);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Texas Tea button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
-        {
-            TexasTea tt = new TexasTea();
-            if (DataContext is Order data)
-            {
-                data.Add(tt);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Water button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddWaterButton_Click(object sender, RoutedEventArgs e)
-        {
-            Water w = new Water();
-            if (DataContext is Order data)
-            {
-                data.Add(w);
-            }
-        }
     }
 }

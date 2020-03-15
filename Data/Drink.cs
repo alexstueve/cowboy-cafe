@@ -36,5 +36,16 @@ namespace CowboyCafe.Data
         public abstract List<string> SpecialInstructions { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper method to notify of boolean customization property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
+
     }
 }

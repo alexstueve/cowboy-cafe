@@ -62,19 +62,31 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Whether or not the Texas Tea is served sweet
         /// </summary>
-        public bool Sweet { get => sweet; set => sweet = value; }
+        public bool Sweet
+        {
+            get { return sweet; }
+            set { sweet = value; NotifyOfPropertyChanged("Sweet"); }
+        }
 
         private bool lemon = false;
         /// <summary>
         /// Whether or not the Texas Tea is served with a lemon
         /// </summary>
-        public bool Lemon { get => lemon; set => lemon = value; }
+        public bool Lemon
+        {
+            get { return lemon; }
+            set { lemon = value; NotifyOfPropertyChanged("Lemon"); }
+        }
 
         private bool ice = true;
         /// <summary>
         /// Whether or not the Texas Tea is served with ice
         /// </summary>
-        public override bool Ice { get => ice; set => ice = value; }
+        public override bool Ice
+        {
+            get { return ice; }
+            set { ice = value; NotifyOfPropertyChanged("Ice"); }
+        }
 
         /// <summary>
         /// Gets the special instructions of the Texas Tea

@@ -45,10 +45,10 @@
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock>Drink</TextBlock>
-            <Button Name="AddCowboyCoffeeButton" Click="AddCowboyCoffeeButton_Click">Cowboy Coffee</Button>
-            <Button Name="AddJerkedSodaButton" Click="AddJerkedSodaButton_Click">Jerked Soda</Button>
-            <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Click">Texas Tea</Button>
-            <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
+            <Button Name="AddCowboyCoffeeButton" Click="OnItemAddButtonClicked" Tag="CowboyCoffee">Cowboy Coffee</Button>
+            <Button Name="AddJerkedSodaButton" Click="OnItemAddButtonClicked" Tag="JerkedSoda">Jerked Soda</Button>
+            <Button Name="AddTexasTeaButton" Click="OnItemAddButtonClicked" Tag="TexasTea">Texas Tea</Button>
+            <Button Name="AddWaterButton" Click="OnItemAddButtonClicked" Tag="Water">Water</Button>
         </StackPanel>
 
     </Grid>
