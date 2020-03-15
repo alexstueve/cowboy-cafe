@@ -38,10 +38,10 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock>Side</TextBlock>
-            <Button Name="AddBakedBeansButton" Click="AddBakedBeansButton_Click">Baked Beans</Button>
-            <Button Name="AddChiliCheeseFriesButton" Click="AddChiliCheeseFriesButton_Click">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgersButton" Click="AddCornDodgersButton_Click">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampoButton" Click="AddPanDeCampoButton_Click">Pan de Campo</Button>
+            <Button Name="AddBakedBeansButton" Click="OnItemAddButtonClicked" Tag="BakedBeans">Baked Beans</Button>
+            <Button Name="AddChiliCheeseFriesButton" Click="OnItemAddButtonClicked" Tag="ChiliCheeseFries">Chili Cheese Fries</Button>
+            <Button Name="AddCornDodgersButton" Click="OnItemAddButtonClicked" Tag="CornDodgers">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampoButton" Click="OnItemAddButtonClicked" Tag="PanDeCampo">Pan de Campo</Button>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock>Drink</TextBlock>

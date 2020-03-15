@@ -78,6 +78,26 @@ namespace PointOfSale
                             screen = new CustomizeTrailburger();
                             AddItemAndOpenCustomizationScreen(item, screen);
                             break;
+                        case "BakedBeans":
+                            item = new BakedBeans();
+                            screen = new CustomizeBakedBeans();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "ChiliCheeseFries":
+                            item = new ChiliCheeseFries();
+                            screen = new CustomizeChiliCheeseFries();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "CornDodgers":
+                            item = new CornDodgers();
+                            screen = new CustomizeCornDodgers();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
+                        case "PanDeCampo":
+                            item = new PanDeCampo();
+                            screen = new CustomizePanDeCampo();
+                            AddItemAndOpenCustomizationScreen(item, screen);
+                            break;
                     }
                 }
             }
@@ -98,34 +118,6 @@ namespace PointOfSale
                     }
                 }
                 
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Texas Triple Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTexasTripleBurgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            TexasTripleBurger ttb = new TexasTripleBurger();
-            if (DataContext is Order data)
-            {
-                data.Add(ttb);
-            }
-        }
-
-        /// <summary>
-        /// Click event for the Trail Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AddTrailburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            Trailburger tb = new Trailburger();
-            if (DataContext is Order data)
-            {
-                data.Add(tb);
             }
         }
 
