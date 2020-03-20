@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets and sets the size of the drink
         /// </summary>
-        public virtual Size Size { get; set; }
+        public abstract Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the drink

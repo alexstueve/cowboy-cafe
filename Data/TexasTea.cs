@@ -9,6 +9,21 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TexasTea : Drink
     {
+
+        private Size size = Size.Small;
+        public override Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                NotifyOfPropertyChanged("Size");
+            }
+        }
+
         /// <summary>
         /// Gets the price of the Texas Tea
         /// </summary>

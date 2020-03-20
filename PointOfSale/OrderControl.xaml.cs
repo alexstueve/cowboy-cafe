@@ -62,5 +62,13 @@ namespace PointOfSale
         {
             Container.Child = element;
         }
+
+        public void ItemChange()
+        {
+            if (DataContext is Order order)
+            {
+                order.NotifyItemChange();
+            }
+        }
     }
 }
