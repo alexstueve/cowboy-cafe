@@ -33,9 +33,9 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0"/>
-                        <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" Grid.Row="0"/>
-                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="{Binding}" Grid.Column="0" Grid.Row="0" FontSize="24"/>
+                        <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" Grid.Row="0" FontSize="24"/>
+                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="24"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
