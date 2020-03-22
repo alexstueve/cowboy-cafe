@@ -24,6 +24,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When an enum property for this item changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ChangeItemEnums(object sender, RoutedEventArgs e)
         {
             var ancestor = this.FindAncestor<OrderControl>();

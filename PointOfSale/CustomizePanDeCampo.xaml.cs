@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -21,6 +22,20 @@ namespace PointOfSale
         public CustomizePanDeCampo()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// When an enum property for this item changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ChangeItemEnums(object sender, RoutedEventArgs e)
+        {
+            var ancestor = this.FindAncestor<OrderControl>();
+            if (ancestor is OrderControl)
+            {
+                ancestor.ItemChange();
+            }
         }
     }
 }

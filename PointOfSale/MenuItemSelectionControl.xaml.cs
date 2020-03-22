@@ -30,9 +30,11 @@ namespace PointOfSale
             
         }
 
-        // POTENTIAL WAY TO INCLUDE ALL BUTTONS IN ONE HANDLER, USE TAGS ON THE BUTTONS THEMSELVES
-
-        
+        /// <summary>
+        /// Adds items to the order based on the tag of the buttons themselves
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -123,6 +125,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Adds the item to the order and opens a customization screen for that item
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="screen"></param>
         private void AddItemAndOpenCustomizationScreen(IOrderItem item, UserControl screen)
         {
             if (DataContext is Order data)

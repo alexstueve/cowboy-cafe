@@ -89,6 +89,9 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
+        /// <summary>
+        /// Notifies that some item in the order has changed (ie a drink)
+        /// </summary>
         public void NotifyItemChange()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));

@@ -4,8 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:data="clr-namespace:CowboyCafe.Data;assembly=CowboyCafe.Data"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="Sizes">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -17,11 +26,13 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Customize Water" FontSize="30" Margin="10"/>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <ListBox ItemsSource="{Binding Path=Size}">
-                <RadioButton Content="Small" FontSize="24"/>
-                <RadioButton Content="Medium" FontSize="24"/>
-                <RadioButton Content="Large" FontSize="24"/>
-            </ListBox>
+            <ListView ItemsSource="{Binding Source={StaticResource Sizes}}" SelectedItem="{Binding Path=Size}" SelectionChanged="ChangeItemEnums">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontSize="24"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <CheckBox Content="Lemon" FontSize="24" IsChecked="{Binding Path=Lemon}"/>

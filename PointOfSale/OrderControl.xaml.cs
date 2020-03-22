@@ -58,11 +58,18 @@ namespace PointOfSale
             this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// Swaps the screen to and from the customization screen
+        /// </summary>
+        /// <param name="element"></param>
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
         }
 
+        /// <summary>
+        /// When an item has changed in the order
+        /// </summary>
         public void ItemChange()
         {
             if (DataContext is Order order)

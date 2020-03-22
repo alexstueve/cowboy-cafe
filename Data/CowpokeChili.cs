@@ -10,8 +10,6 @@ namespace CowboyCafe.Data
     public class CowpokeChili : Entree
     {
 
-        
-
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese

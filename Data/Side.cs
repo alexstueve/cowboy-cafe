@@ -43,9 +43,10 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
-
+        /// <summary>
+        /// Returns a blank list for ui purposes
+        /// </summary>
         public List<string> SpecialInstructions => new List<string>();
-
         
     }
 }

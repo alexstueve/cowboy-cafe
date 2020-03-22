@@ -11,6 +11,9 @@ namespace CowboyCafe.Data
     {
 
         private Size size = Size.Small;
+        /// <summary>
+        /// Gets and sets the size of the Jerked Soda
+        /// </summary>
         public override Size Size
         {
             get

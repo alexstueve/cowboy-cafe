@@ -10,6 +10,9 @@ namespace CowboyCafe.Data
     public class CowboyCoffee : Drink
     {
 
+        /// <summary>
+        /// Gets and sets the size of the Cowboy Coffee
+        /// </summary>
         private Size size = Size.Small;
         public override Size Size
         {
