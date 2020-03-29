@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -104,6 +105,13 @@ namespace CowboyCafe.DataTests
             if (ice && !lemon) Assert.Empty(water.SpecialInstructions);
             if (ice && lemon || !ice && !lemon) Assert.Single(water.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, water.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void WaterImplementsINotifyPropertyChanged()
+        {
+            var item = new Water();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
     }
 }

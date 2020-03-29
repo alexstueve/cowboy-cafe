@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -116,6 +117,13 @@ namespace CowboyCafe.DataTests
             };
             if (!ice) Assert.Collection(soda.SpecialInstructions, item => Assert.Equal("Hold Ice", item));
             if (ice) Assert.Empty(soda.SpecialInstructions);
+        }
+
+        [Fact]
+        public void JerkedSodaImplementsINotifyPropertyChanged()
+        {
+            var item = new JerkedSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
     }
 }

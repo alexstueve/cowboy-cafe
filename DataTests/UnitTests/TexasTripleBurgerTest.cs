@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -158,6 +159,13 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold bun", burger.SpecialInstructions);
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
+        }
+
+        [Fact]
+        public void TexasTripleBurgerImplementsINotifyPropertyChanged()
+        {
+            var item = new TexasTripleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
     }
 }

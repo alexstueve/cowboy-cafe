@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -58,6 +59,13 @@ namespace CowboyCafe.DataTests
             chicken.Pickle = false;
             Assert.Contains("hold pickle", chicken.SpecialInstructions);
             Assert.Contains("hold bread", chicken.SpecialInstructions);
+        }
+
+        [Fact]
+        public void AngryChickenImplementsINotifyPropertyChanged()
+        {
+            var item = new AngryChicken();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
     }
 }
