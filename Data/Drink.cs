@@ -10,10 +10,22 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Drink : IOrderItem
     {
+        private Size size;
         /// <summary>
-        /// Gets and sets the size of the drink
+        /// Gets the size of the drink
         /// </summary>
-        public abstract Size Size { get; set; }
+        public Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ToString"));
+            }
+        }
 
         /// <summary>
         /// Gets the price of the drink

@@ -101,5 +101,59 @@ namespace CowboyCafe.DataTests
             var item = new CowpokeChili();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var item = new CowpokeChili();
+            Assert.PropertyChanged(item, "Cheese", () => {
+                item.Cheese = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSourCreamPropertyShouldInvokePropertyChangedForSourCream()
+        {
+            var item = new CowpokeChili();
+            Assert.PropertyChanged(item, "SourCream", () => {
+                item.SourCream = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingGreenOnionsPropertyShouldInvokePropertyChangedForGreenOnions()
+        {
+            var item = new CowpokeChili();
+            Assert.PropertyChanged(item, "GreenOnions", () => {
+                item.GreenOnions = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new CowpokeChili();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Cheese = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSourCreamPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new CowpokeChili();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.SourCream = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingGreenOnionsPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new CowpokeChili();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.GreenOnions = false;
+            });
+        }
     }
 }
