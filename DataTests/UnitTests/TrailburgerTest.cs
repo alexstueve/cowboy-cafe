@@ -112,5 +112,95 @@ namespace CowboyCafe.DataTests
             var item = new Trailburger();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "Cheese", () => {
+                item.Cheese = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "Pickle", () => {
+                item.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForBun()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "Bun", () => {
+                item.Bun = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForKetchup()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "Ketchup", () => {
+                item.Ketchup = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForMustard()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "Mustard", () => {
+                item.Mustard = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Cheese = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Bun = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Ketchup = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new Trailburger();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Mustard = false;
+            });
+        }
     }
 }

@@ -67,5 +67,41 @@ namespace CowboyCafe.DataTests
             var item = new PecosPulledPork();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
+
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForBread()
+        {
+            var item = new PecosPulledPork();
+            Assert.PropertyChanged(item, "Bread", () => {
+                item.Bread = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var item = new PecosPulledPork();
+            Assert.PropertyChanged(item, "Pickle", () => {
+                item.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new PecosPulledPork();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new PecosPulledPork();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Bread = false;
+            });
+        }
     }
 }

@@ -80,5 +80,51 @@ namespace CowboyCafe.DataTests
             }
         }
 
+        [Fact]
+        public void OrderImplementsINotifyPropertyChanged()
+        {
+            var item = new Order();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
+        }
+
+        [Fact]
+        public void AddingItemsShouldInvokePropertyChangedForItems()
+        {
+            var item = new Order();
+            Assert.PropertyChanged(item, "Items", () => {
+                item.Add(new AngryChicken());
+            });
+        }
+
+        [Fact]
+        public void RemovingItemsShouldInvokePropertyChangedForItems()
+        {
+            var item = new Order();
+            var ac = new AngryChicken();
+            item.Add(ac);
+            Assert.PropertyChanged(item, "Items", () => {
+                item.Remove(ac);
+            });
+        }
+
+        [Fact]
+        public void AddingItemsShouldInvokePropertyChangedForSubtotal()
+        {
+            var item = new Order();
+            Assert.PropertyChanged(item, "Subtotal", () => {
+                item.Add(new AngryChicken());
+            });
+        }
+
+        [Fact]
+        public void RemovingItemsShouldInvokePropertyChangedForSubtotal()
+        {
+            var item = new Order();
+            var ac = new AngryChicken();
+            item.Add(ac);
+            Assert.PropertyChanged(item, "Subtotal", () => {
+                item.Remove(ac);
+            });
+        }
     }
 }

@@ -11,23 +11,6 @@ namespace CowboyCafe.Data
     {
 
         /// <summary>
-        /// Gets and sets the size of the Cowboy Coffee
-        /// </summary>
-        private Size size = Size.Small;
-        public override Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-                NotifyOfPropertyChanged("Size");
-            }
-        }
-
-        /// <summary>
         /// Gets the price of the Cowboy Coffee
         /// </summary>
         public override double Price

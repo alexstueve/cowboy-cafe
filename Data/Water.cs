@@ -10,23 +10,6 @@ namespace CowboyCafe.Data
     public class Water : Drink
     {
 
-        private Size size = Size.Small;
-        /// <summary>
-        /// Gets and sets the size of the Water
-        /// </summary>
-        public override Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-                NotifyOfPropertyChanged("Size");
-            }
-        }
-
         /// <summary>
         /// Gets the price of the Water
         /// </summary>

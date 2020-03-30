@@ -134,5 +134,68 @@ namespace CowboyCafe.DataTests
             var item = new TexasTea();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(item);
         }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForSize()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "Size", () => {
+                item.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForPrice()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "Price", () => {
+                item.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizePropertyShouldInvokePropertyChangedForCalories()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "Calories", () => {
+                item.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "Ice", () => {
+                item.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForLemon()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "Lemon", () => {
+                item.Lemon = true;
+            });
+        }
+
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLemonPropertyShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var item = new TexasTea();
+            Assert.PropertyChanged(item, "SpecialInstructions", () => {
+                item.Lemon = true;
+            });
+        }
     }
 }
