@@ -25,6 +25,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler for when an item is selected to edit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnEditItemSelected(object sender, RoutedEventArgs e)
         {
 
@@ -109,6 +114,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Event handler for the remove item button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnRemoveItemClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)

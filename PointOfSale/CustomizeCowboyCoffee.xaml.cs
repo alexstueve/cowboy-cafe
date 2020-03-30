@@ -29,7 +29,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void ChangeItemEnums(object sender, RoutedEventArgs e)
+        public void ChangeItem(object sender, RoutedEventArgs e)
         {
             var ancestor = this.FindAncestor<OrderControl>();
             if (ancestor is OrderControl)

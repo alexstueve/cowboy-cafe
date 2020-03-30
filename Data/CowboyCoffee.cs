@@ -73,7 +73,11 @@ namespace CowboyCafe.Data
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; NotifyOfPropertyChanged("Decaf"); }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Decaf");
+            }
         }
 
         private bool ice = false;

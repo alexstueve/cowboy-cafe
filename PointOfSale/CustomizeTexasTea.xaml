@@ -26,7 +26,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Customize Texas Tea" FontSize="30" Margin="10"/>
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <ListView ItemsSource="{Binding Source={StaticResource Sizes}}" SelectedItem="{Binding Path=Size}" SelectionChanged="ChangeItemEnums">
+            <ListView ItemsSource="{Binding Source={StaticResource Sizes}}" SelectedItem="{Binding Path=Size}" SelectionChanged="ChangeItem">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" FontSize="24"/>
@@ -35,7 +35,7 @@
             </ListView>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <CheckBox Content="Sweet" FontSize="24" IsChecked="{Binding Path=Sweet}"/>
+            <CheckBox Content="Sweet" FontSize="24" IsChecked="{Binding Path=Sweet}" Checked="ChangeItem"/>
             <CheckBox Content="Lemon" FontSize="24" IsChecked="{Binding Path=Lemon}"/>
             <CheckBox Content="Ice" FontSize="24" IsChecked="{Binding Path=Ice}"/>
         </StackPanel>
