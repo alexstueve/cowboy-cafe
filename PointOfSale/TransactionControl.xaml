@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="PointOfSale.TransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Order " FontSize="28" Margin="5"/>
+            <TextBlock Text="{Binding Path=OrderNumber}" FontSize="28" Margin="5"/>
+        </StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding Path=Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="16" Margin="5"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Subtotal: " FontSize="28" Margin="5"/>
+            <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}" FontSize="28" Margin="5"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Total: " FontSize="28" Margin="5"/>
+            <TextBlock Text="{Binding Path=Total, StringFormat=c}" FontSize="28" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

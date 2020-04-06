@@ -63,6 +63,17 @@ namespace CowboyCafe.Data
         public uint OrderNumber { get => LastOrderNumber; }
 
         /// <summary>
+        /// Gets the total for this order
+        /// </summary>
+        public double Total
+        {
+            get
+            {
+                return Subtotal * 1.16;
+            }
+        }
+
+        /// <summary>
         /// event handler to notify when a property in this class has changed
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
