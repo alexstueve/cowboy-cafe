@@ -13,6 +13,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Order " FontSize="28" Margin="5"/>
             <TextBlock Text="{Binding Path=OrderNumber}" FontSize="28" Margin="5"/>
@@ -30,7 +34,13 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
             <TextBlock Text="Total: " FontSize="28" Margin="5"/>
-            <TextBlock Text="{Binding Path=Total, StringFormat=c}" FontSize="28" Margin="5"/>
+            <TextBlock Name="TotalTextBlock" Text="{Binding Path=Total, StringFormat=c}" FontSize="28" Margin="5"/>
+        </StackPanel>
+        <TextBlock Grid.Column="1" Text="Payment Options" FontSize="28" Margin="5"/>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button Height="75" Width="350" Content="Credit" FontSize="28" Click="OnCreditButtonClicked" Margin="5"/>
+            <Button Height="75" Width="350" Content="Cash" FontSize="28" Click="OnCashButtonClicked" Margin="5"/>
+            <Button Height="75" Width="350" Content="Cancel Transaction" FontSize="28" Click="OnCancelButtonClicked" Margin="5 30 5 5"/>
         </StackPanel>
     </Grid>
 </UserControl>
