@@ -21,6 +21,9 @@ namespace PointOfSale
     {
         public static readonly DependencyProperty DenominationProperty =
             DependencyProperty.Register("Denomination", typeof(Bills), typeof(BillControl), new PropertyMetadata(Bills.One));
+        /// <summary>
+        /// The denomination of this bill control
+        /// </summary>
         public Bills Denomination
         {
             get { return (Bills)GetValue(DenominationProperty); }
@@ -29,7 +32,9 @@ namespace PointOfSale
 
         public static readonly DependencyProperty QuantityProperty =
             DependencyProperty.Register("Quantity", typeof(int), typeof(BillControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-
+        /// <summary>
+        /// The quantity of this bill control
+        /// </summary>
         public int Quantity
         {
             get { return (int)GetValue(QuantityProperty); }
@@ -41,11 +46,21 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When the increase button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
         {
             Quantity++;
         }
 
+        /// <summary>
+        /// When the decrease button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnDecreaseClicked(object sender, RoutedEventArgs e)
         {
             if (Quantity > 0) Quantity--;

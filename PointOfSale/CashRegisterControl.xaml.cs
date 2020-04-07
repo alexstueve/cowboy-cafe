@@ -26,12 +26,22 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When the page loads, sets the text box to a static value for change purposes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnLoad(object sender, RoutedEventArgs e)
         {
             CashRegisterModelView cr = DataContext as CashRegisterModelView;
             DrawerTotalTextBox.Text = $"{cr.TotalValue}";
         }
 
+        /// <summary>
+        /// When the take payment button is clicked, determines if enough cash has been given
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnTakePaymentButtonClicked(object sender, RoutedEventArgs e)
         {
             CashRegisterModelView cr = DataContext as CashRegisterModelView;
@@ -48,6 +58,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the give change button is clicked, calculates the change needed and prints the receipt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnGiveChangeButtonClicked(object sender, RoutedEventArgs e)
         {
             CashRegisterModelView cr = DataContext as CashRegisterModelView;

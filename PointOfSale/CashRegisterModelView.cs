@@ -13,14 +13,26 @@ namespace PointOfSale
 
         private static CashDrawer Drawer = new CashDrawer();
 
+        /// <summary>
+        /// Total cash in the drawer
+        /// </summary>
         public double TotalValue { get => Drawer.TotalValue; }
 
         private double orderValue = 0;
+        /// <summary>
+        /// The value of the current order
+        /// </summary>
         public double OrderValue { get => orderValue; set => orderValue = value; }
 
         private double amountPaid = 0;
+        /// <summary>
+        /// The amount paid by the customer
+        /// </summary>
         public double AmountPaid { get => amountPaid; set => amountPaid = value; }
 
+        /// <summary>
+        /// Gets and sets the amount of pennies
+        /// </summary>
         public int Pennies
         {
             get => Drawer.Pennies;
@@ -34,6 +46,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of nickels
+        /// </summary>
         public int Nickels
         {
             get => Drawer.Nickels;
@@ -47,6 +62,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of dimes
+        /// </summary>
         public int Dimes
         {
             get => Drawer.Dimes;
@@ -60,6 +78,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of quarters
+        /// </summary>
         public int Quarters
         {
             get => Drawer.Quarters;
@@ -73,6 +94,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of half dollars
+        /// </summary>
         public int HalfDollars
         {
             get => Drawer.HalfDollars;
@@ -86,6 +110,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of dollar coins
+        /// </summary>
         public int Dollars
         {
             get => Drawer.Dollars;
@@ -99,6 +126,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of ones
+        /// </summary>
         public int Ones
         {
             get => Drawer.Ones;
@@ -112,6 +142,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of two dollar bills
+        /// </summary>
         public int Twos
         {
             get => Drawer.Twos;
@@ -125,6 +158,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of fives
+        /// </summary>
         public int Fives
         {
             get => Drawer.Fives;
@@ -138,6 +174,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of tens
+        /// </summary>
         public int Tens
         {
             get => Drawer.Tens;
@@ -151,6 +190,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of twenties
+        /// </summary>
         public int Twenties
         {
             get => Drawer.Twenties;
@@ -164,6 +206,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of fifties
+        /// </summary>
         public int Fifties
         {
             get => Drawer.Fifties;
@@ -177,6 +222,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Gets and sets the amount of hundreds
+        /// </summary>
         public int Hundreds
         {
             get => Drawer.Hundreds;
@@ -190,6 +238,10 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When one of the denomination properties has changed, will update
+        /// </summary>
+        /// <param name="denomination"></param>
         void InvokePropertyChanged(string denomination)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(denomination));

@@ -29,6 +29,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When the pay by credit button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCreditButtonClicked(object sender, RoutedEventArgs e)
         {
             CardTerminal ct = new CardTerminal();
@@ -59,6 +64,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the pay by cash button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCashButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -71,6 +81,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// When the cancel transaction button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCancelButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
