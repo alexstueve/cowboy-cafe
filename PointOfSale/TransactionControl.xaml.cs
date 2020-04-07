@@ -22,7 +22,7 @@ namespace PointOfSale
     public partial class TransactionControl : UserControl
     {
 
-        private static CashDrawer cashDrawer = new CashDrawer();
+        private static CashRegisterModelView cashDrawer = new CashRegisterModelView();
 
         public TransactionControl()
         {
@@ -38,7 +38,16 @@ namespace PointOfSale
                 if (rc == ResultCode.Success)
                 {
                     ReceiptPrinter rp = new ReceiptPrinter();
+                    rp.Print(order.OrderNumber.ToString());
+                    rp.Print(DateTime.Now.ToString());
+                    foreach(IOrderItem item in order.Items)
+                    {
+                        rp.Print($"{item.ToString()} ${item.Price}");
+                        rp.Print(item.SpecialInstructions.ToString());
+                    }
+                    rp.Print(order.Subtotal.ToString());
                     rp.Print(order.Total.ToString());
+                    rp.Print("Credit");
                     var orderControl = this.FindAncestor<OrderControl>();
                     orderControl.SwapScreen(new MenuItemSelectionControl());
                     orderControl.DataContext = new Order();
@@ -52,12 +61,20 @@ namespace PointOfSale
 
         public void OnCashButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            var orderControl = this.FindAncestor<OrderControl>();
+            CashRegisterControl crc = new CashRegisterControl();
+            crc.DataContext = cashDrawer;
+            orderControl.SwapScreen(crc);
+            if (DataContext is Order order)
+            {
+                cashDrawer.OrderValue = order.Total;
+            }
         }
 
         public void OnCancelButtonClicked(object sender, RoutedEventArgs e)
         {
-
+            var orderControl = this.FindAncestor<OrderControl>();
+            orderControl.Container.Child = new MenuItemSelectionControl();
         }
 
     }
