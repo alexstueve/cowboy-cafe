@@ -14,6 +14,7 @@ namespace CowboyCafe.DataTests
         public double Price { get; set; }
         public uint Calories { get; set; }
         public List<string> SpecialInstructions { get; set; }
+        public Size Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

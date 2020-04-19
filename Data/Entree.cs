@@ -31,6 +31,7 @@ namespace CowboyCafe.Data
         /// Gets a list of the special instructions of the entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        public Size Size { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         /// <summary>
         /// Helper method to notify of boolean customization property changes

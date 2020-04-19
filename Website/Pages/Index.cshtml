@@ -21,15 +21,39 @@
 </p>
 
 <h2>Entrees</h2>
-@foreach(IOrderItem item in Menu.Entrees())
+@foreach (IOrderItem item in Menu.Entrees())
 {
     <div class="menu-item">
         <h6 class="item-name">@item.GetType().Name</h6>
-        <div class="item-price">$@item.Price.ToString()</div>
-        <div class="item-calories">@item.Calories.ToString() Calories</div>
+        <div class="item-info">$@item.Price.ToString()</div>
+        <div class="item-info">@item.Calories.ToString() Calories</div>
     </div>
 }
 
 <h2>Sides</h2>
+@foreach (IOrderItem item in Menu.Sides())
+{
+    <div class="menu-item">
+        <h6 class="item-name">@item.GetType().Name</h6>
+        @{ item.Size = Size.Small; }
+        <div class="item-info">@item.Size.ToString(): $@item.Price.ToString(), @item.Calories.ToString() Calories</div>
+        @{ item.Size = Size.Medium; }
+        <div class="item-info">@item.Size.ToString(): $@item.Price.ToString(), @item.Calories.ToString() Calories</div>
+        @{ item.Size = Size.Large; }
+        <div class="item-info">@item.Size.ToString(): $@item.Price.ToString(), @item.Calories.ToString() Calories</div>
+    </div>
+}
 
 <h2>Drinks</h2>
+@foreach (IOrderItem item in Menu.Drinks())
+{
+    <div class="menu-item">
+        <h6 class="item-name">@item.GetType().Name</h6>
+        @{ item.Size = Size.Small; }
+        <div class="item-info">@item.Size.ToString(): $@item.Price.ToString(), @item.Calories.ToString() Calories</div>
+        @{ item.Size = Size.Medium; }
+        <div class="item-info">@item.Size.ToString(): $@item.Price.ToString(), @item.Calories.ToString() Calories</div>
+        @{ item.Size = Size.Large; }
+        <div class="item-info">@item.Size.ToString(): $@item.Price.ToString(), @item.Calories.ToString() Calories</div>
+    </div>
+}

@@ -19,6 +19,11 @@ namespace CowboyCafe.Data
         uint Calories { get; }
 
         /// <summary>
+        /// The size of this order item
+        /// </summary>
+        Size Size { get; set; }
+
+        /// <summary>
         /// The special instructions for this order item
         /// </summary>
         List<string> SpecialInstructions { get; }
