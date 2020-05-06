@@ -20,13 +20,13 @@
     Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
 </p>
 
-<form id="menu">
-    <div id="search">
+<form class="menu">
+    <div class="search">
         <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
         <input type="submit" value="Search">
     </div>
 
-    <div id="filters">
+    <div class="filters">
 
         <h4>Type</h4>
         <label>
@@ -60,20 +60,61 @@
 
     </div>
 
-    <div id="results">
+    <div class="results">
         <h1>Menu Results</h1>
 
-        <ul class="menu-list">
-            @foreach(IOrderItem item in @Model.MenuItems)
-            {
-                <li>
-                    <div class="details">
-                        <h3 class="item-name">@item.GetType().Name</h3>
-                        <div class="item-info">$@item.Price.ToString()</div>
-                        <div class="item-info">@item.Calories.ToString() Calories</div>
-                    </div>
-                </li>
-            }
-        </ul>
+        <div class="flex-columns">
+            <div>
+                <h2>Entrees</h2>
+                @foreach(IOrderItem item in Model.MenuItems)
+                {
+                    if (item is Entree)
+                    {
+                        <div class="details">
+                            <h3 class="item-name">@item.GetType().Name</h3>
+                            <div class="item-info">$@item.Price.ToString()</div>
+                            <div class="item-info">@item.Calories.ToString() Calories</div>
+                        </div>
+                    }
+                }
+            </div>
+            <div>
+                <h2>Sides</h2>
+                @foreach (IOrderItem item in Model.MenuItems)
+                {
+                    if (item is Side)
+                    {                     
+                        <div class="details">
+                            <h3 class="item-name">@item.GetType().Name</h3>
+                            <div class="item-info">$@item.Price.ToString()</div>
+                            <div class="item-info">@item.Calories.ToString() Calories</div>
+                        </div>
+                    }
+                }
+            </div>
+            <div>
+                <h2>Drinks</h2>
+                @foreach (IOrderItem item in Model.MenuItems)
+                {
+                    if (item is Drink)
+                    {
+                        <div class="details">
+                            <h3 class="item-name">@item.GetType().Name</h3>
+                            <div class="item-info">$@item.Price.ToString()</div>
+                            <div class="item-info">@item.Calories.ToString() Calories</div>
+                            @if (item is JerkedSoda)
+                            {
+                                <h4>Flavors</h4>
+                                foreach (string s in Enum.GetNames(typeof(SodaFlavor)))
+                                {
+                                    <div class="item-info">@s</div>
+                                }
+                            }
+                        </div>
+                    }
+                }
+            </div>
+            
+        </div>
     </div>
 </form>
